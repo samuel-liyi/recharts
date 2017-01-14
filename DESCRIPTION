@@ -27,6 +27,7 @@ Collate:
     'eBar.R'
     'eForce.R'
     'eFunnel.R'
+    'eGraph.R'
     'eParallel.R'
     'eWordcloud.R'
     'eLine.R'
