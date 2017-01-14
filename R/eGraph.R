@@ -2,6 +2,8 @@ eGraph = function(nodes, edges, title=NULL, tooltip="",size=c(100,100),opt = lis
 {	
 	data = lapply(split(nodes,seq_len(nrow(nodes))),as.list)
 	link = lapply(split(edges,seq_len(nrow(edges))),as.list)
+	names(data) = NULL
+	names(link) = NULL
 	opt$series = list(
 		list(
 			type = "graph",
