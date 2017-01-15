@@ -1,14 +1,21 @@
-eGraph = function(nodes, edges, title=NULL, tooltip="",size=c(100,100),opt = list())
+eGraph = function(nodes, edges, title="", name="",focusNodeAdjacency=TRUE
+                  ,symbolSize=100,tooltip=TRUE,size=c(400,400),opt = list())
 {	
   data = lapply(split(nodes,seq_len(nrow(nodes))),as.list)
   link = lapply(split(edges,seq_len(nrow(edges))),as.list)
   names(data)=NULL
   names(link)=NULL
+  opt$name = name
+  opt$focusNodeAdjacency = TRUE
+  opt$tooltip = list(show = tooltip)
   opt$series = 
     list(
       type = "graph",
+      symbolSize = symbolSize,
       data = data,
-      links = link
+      links = link,
+      label = list(normal = list(show = TRUE)),
+      edgeSymbol = c('circle', 'arrow')
     )
   
   
